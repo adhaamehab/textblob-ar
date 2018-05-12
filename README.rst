@@ -9,7 +9,6 @@ Features
 
 * Tokenizer
 * Sentiment analysis
-* Supports Python 2 and 3
 
 
 Usage
@@ -40,7 +39,7 @@ Usage
 Requirements
 ------------
 
-- Python >= 2.6 or >= 3.5
+- Python >= 3.3
 
 TODO
 ----

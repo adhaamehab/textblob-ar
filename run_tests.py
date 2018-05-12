@@ -10,7 +10,7 @@ Skip slow tests: ::
 from __future__ import unicode_literals
 import nose
 import sys
-from textblob_ar.compat import PY2, PY26
+from textblob.compat import PY2
 
 
 def main():
@@ -25,9 +25,7 @@ def get_argv():
     if "force-all" in sys.argv:
         # Don't exclude any tests
         return args
-    if PY26:
-        # Exclude tests that don't work on python2.6
-        attr_conditions.append("not py27_only")
+
     if not PY2:
         # Exclude tests that only work on python2
         attr_conditions.append("not py2_only")
