@@ -1,0 +1,3 @@
+include *.rst LICENSE *.txt
+include textblob_ar/*.txt
+include textblob_ar/*.xml
