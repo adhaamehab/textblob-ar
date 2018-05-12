@@ -2,6 +2,9 @@
 textblob-ar [WIP]
 ===========
 
+.. image:: https://travis-ci.org/adhaamehab/textblob-ar.svg?branch=master
+    :target: https://travis-ci.org/adhaamehab/textblob-ar
+
 Arabic language support for `TextBlob`_.
 
 Features
