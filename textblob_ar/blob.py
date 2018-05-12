@@ -2,7 +2,8 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from textblob.blob import WordList, Word, BaseBlob
 from textblob.compat import unicode
 from textblob.decorators import requires_nltk_corpus
-from textblob_ar.tokenizer import WordPunctTokenizer 
+from textblob_ar.tokenizer import WordPunctTokenizer
+from textblob_ar.sentiment import PatternAnalyzer
 
 class WordAR(Word):
     """Arabic Word representation and basic ops"""
@@ -56,7 +57,7 @@ class WordlistAR(WordList):
         return self.__class__([i.lemma() for i in self])
 
 
-class TextBlobAR(BaseBlob):
+class TextBlob(BaseBlob):
     
 
     def __init__(self, text, tokenizer=None,
@@ -67,4 +68,5 @@ class TextBlobAR(BaseBlob):
                  classifier=None, clean_html=False):
         
         _tokenizer = tokenizer if tokenizer is not None else WordPunctTokenizer()
-        super().__init__(text=text, tokenizer=_tokenizer)
+        _analyzer = analyzer if analyzer is not None else PatternAnalyzer()
+        super().__init__(text=text, tokenizer=_tokenizer, analyzer=_analyzer, clean_html=clean_html)
