@@ -1,9 +1,11 @@
+import nltk
 from nltk.stem.wordnet import WordNetLemmatizer
-from textblob.blob import WordList, Word, BaseBlob
+from textblob.blob import BaseBlob, Word, WordList
 from textblob.compat import unicode
 from textblob.decorators import requires_nltk_corpus
-from textblob_ar.tokenizer import WordPunctTokenizer
 from textblob_ar.sentiment import PatternAnalyzer
+from textblob_ar.tokenizer import WordPunctTokenizer
+
 
 class WordAR(Word):
     """Arabic Word representation and basic ops"""
@@ -70,3 +72,9 @@ class TextBlob(BaseBlob):
         _tokenizer = tokenizer if tokenizer is not None else WordPunctTokenizer()
         _analyzer = analyzer if analyzer is not None else PatternAnalyzer()
         super().__init__(text=text, tokenizer=_tokenizer, analyzer=_analyzer, clean_html=clean_html)
+
+    def stopwords(self):
+        '''Return list of arabic stopwords'''
+        return nltk.corpus.stopwords.words("arabic")
+
+    
