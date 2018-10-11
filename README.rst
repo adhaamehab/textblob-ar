@@ -44,6 +44,17 @@ Requirements
 
 - Python >= 3.3
 
+Installation
+------------
+* Development
+
+.. code-block:: shell
+    $ git clone https://github.com/adhaamehab/textblob-ar.git
+    $ cd textblob_ar
+    $ virtualenv -p python3 env
+    $ source env/bin/activate
+    $ pip install -Ur dev-requirements.txt
+
 TODO
 ----
 
