@@ -12,6 +12,7 @@ Features
 
 * Tokenizer
 * Sentiment analysis
+* Stanford Arabic POS
 
 
 Usage
@@ -39,6 +40,18 @@ Usage
     >>> blob.sentiment
     Sentiment(polarity=-0.6999999999999998, subjectivity=0.6666666666666666)
 
+
+**Stanford POS**
+
+Note that Stanford POS is the defualt one untill the main one is released
+.. code-block:: python
+
+    >>> from textblob_ar import TextBlob
+    >>> text = """ في أنظمة التشغيل متعددة المهام مثل اليونكس عفريت النظام هو برنامج يعمل في خلفية النظام بعيدا عن التحكم المباشر من المستحدم وغالبا ما يبدأ عمله كعملية خلفية مع بداية تشغيل النظام."""
+    >>> blob = TextBlob(text)
+    >>> print(blob.tags)
+    [('', 'في/IN'), ('', 'أنظمة/NN'), ('', 'التشغيل/DTNN'), ('', 'متعددة/JJ'), ('', 'المهام/DTNN'), ('', 'مثل/NN'), ('', 'اليونكس/DTNNP'), ('', 'عفريت/NNP'), ('', 'النظام/DTNN'), ('', 'هو/PRP'), ('', 'برنامج/NN'), ('', 'يعمل/VBP'), ('', 'في/IN'), ('', 'خلفية/NN'), ('', 'النظام/DTNN'), ('', 'بعيدا/JJ'), ('', 'عن/IN'), ('', 'التحكم/DTNN'), ('', 'المباشر/DTJJ'), ('', 'من/IN'), ('', 'المستحدم/DTNN'), ('', 'وغالبا/NN'), ('', 'ما/WP'), ('', 'يبدأ/VBP'), ('', 'عمله/NN'), ('', 'كعملية/JJ'), ('', 'خلفية/NN'), ('', 'مع/NN'), ('', 'بداية/NN'), ('', 'تشغيل/NN'), ('', 'النظام/DTNN')]
+
 Requirements
 ------------
 
@@ -58,7 +71,8 @@ Installation
 TODO
 ----
 
-- POS
+- Part Of Speech tagger
+- Noun-phrases extraction
 - Parser
 - Classification support
 - Correction
