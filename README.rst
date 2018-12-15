@@ -52,6 +52,21 @@ Note that Stanford POS is the defualt one untill the main one is released
     >>> print(blob.tags)
     [('', 'في/IN'), ('', 'أنظمة/NN'), ('', 'التشغيل/DTNN'), ('', 'متعددة/JJ'), ('', 'المهام/DTNN'), ('', 'مثل/NN'), ('', 'اليونكس/DTNNP'), ('', 'عفريت/NNP'), ('', 'النظام/DTNN'), ('', 'هو/PRP'), ('', 'برنامج/NN'), ('', 'يعمل/VBP'), ('', 'في/IN'), ('', 'خلفية/NN'), ('', 'النظام/DTNN'), ('', 'بعيدا/JJ'), ('', 'عن/IN'), ('', 'التحكم/DTNN'), ('', 'المباشر/DTJJ'), ('', 'من/IN'), ('', 'المستحدم/DTNN'), ('', 'وغالبا/NN'), ('', 'ما/WP'), ('', 'يبدأ/VBP'), ('', 'عمله/NN'), ('', 'كعملية/JJ'), ('', 'خلفية/NN'), ('', 'مع/NN'), ('', 'بداية/NN'), ('', 'تشغيل/NN'), ('', 'النظام/DTNN')]
 
+
+**Text Correction**
+
+Thanks for `Peter Norvig http://norvig.com/spell-correct.html`
+
+.. code-block:: python
+
+    >>> from textblob_ar import TextBlob
+    >>> text = 'الاذدهاز'
+    >>> TextBlob.correct(text)
+    {'الاذهان', 'الازدهار', 'الادهان', 'الاندهاش'}
+    >>> TextBlob.correct(text, top=True)
+    'الازدهاز'
+
+
 Requirements
 ------------
 
