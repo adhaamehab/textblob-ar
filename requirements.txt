@@ -33,7 +33,6 @@ pyparsing==2.2.0
 python-bingtranslate==0.1.0
 python-dateutil==2.7.5
 pytz==2018.5
-requests==2.19.1
 s3transfer==0.1.13
 scipy==1.1.0
 six==1.11.0
