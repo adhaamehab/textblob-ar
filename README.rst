@@ -13,7 +13,9 @@ Features
 * Tokenizer
 * Sentiment analysis
 * Stanford Arabic POS
-
+* Spelling Correction
+* Text similarity
+* Fasttext arabic word2vec interface
 
 Usage
 -----
