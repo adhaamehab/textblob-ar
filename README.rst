@@ -72,7 +72,7 @@ Based on `gensim <https://radimrehurek.com/gensim>`_ and `Fasttext <https://gith
 
 The procedure used in calculating similarity
 is calculating the mean feature vector for each sentence.
-Then calculate the eculidan distance between those two vectors.
+Then calculate the cosine distance between those two vectors.
 
 
 .. code-block:: python
