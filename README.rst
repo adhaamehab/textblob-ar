@@ -66,6 +66,25 @@ Thanks for `Peter Norvig http://norvig.com/spell-correct.html`
     >>> TextBlob.correct(text, top=True)
     'الازدهاز'
 
+**Text Similarity**
+
+Based on `gensim <https://radimrehurek.com/gensim>`_ and `Fasttext <https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md>`_  pretrained word2vec model 
+
+The procedure used in calculating similarity
+is calculating the mean feature vector for each sentence.
+Then calculate the eculidan distance between those two vectors.
+
+
+.. code-block:: python
+
+    >>> from textblob_ar import TextSimilarity
+    >>> sim = TextSimilarity()
+    # takes around 12 second (macbook pro 2017) to load the pretrained word2vec
+    >>> sent1 = u'الإرهابي الصالح هي رواية خيال سياسي للكاتبة دوريس ليسينج. ظهرت أول طبعة للرواية في سبتمبر من عام 1985 للناشرين جوناثان كيب في المملكة المتحدة وألفريد أ'
+    >>> sent2 = u'روايه الكاتبه دوريس ليسينج هي روايه خيال سياسي ظهرت في سبتمبر 1985 بعنوان الارهابي الصالح وتم نشرها عن طريق جوناثان كيب والفريد أ في انجلترا'
+    >>> sim.similarity(sent1, sent2)
+    0.9611366391181946
+
 
 Requirements
 ------------
@@ -83,6 +102,9 @@ Installation
     $ source env/bin/activate
     $ pip install -Ur dev-requirements.txt
 
+for text similarity download fasttext arabic word2vec pretrained model from  `here <https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md>`_
+
+
 TODO
 ----
 
@@ -90,7 +112,6 @@ TODO
 - Noun-phrases extraction
 - Parser
 - Classification support
-- Correction
 - Grammer
 
 
