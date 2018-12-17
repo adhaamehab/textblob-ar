@@ -49,8 +49,10 @@ Note that Stanford POS is the defualt one untill the main one is released
 .. code-block:: python
 
     >>> from textblob_ar import TextBlob
+    >>> from textblob_ar.pos_tagger import StanfordPOSTagger
+    >>> tagg = StanfordPOSTagger()
     >>> text = """ في أنظمة التشغيل متعددة المهام مثل اليونكس عفريت النظام هو برنامج يعمل في خلفية النظام بعيدا عن التحكم المباشر من المستحدم وغالبا ما يبدأ عمله كعملية خلفية مع بداية تشغيل النظام."""
-    >>> blob = TextBlob(text)
+    >>> blob = TextBlob(text, pos_tagger=tagger)
     >>> print(blob.tags)
     [('', 'في/IN'), ('', 'أنظمة/NN'), ('', 'التشغيل/DTNN'), ('', 'متعددة/JJ'), ('', 'المهام/DTNN'), ('', 'مثل/NN'), ('', 'اليونكس/DTNNP'), ('', 'عفريت/NNP'), ('', 'النظام/DTNN'), ('', 'هو/PRP'), ('', 'برنامج/NN'), ('', 'يعمل/VBP'), ('', 'في/IN'), ('', 'خلفية/NN'), ('', 'النظام/DTNN'), ('', 'بعيدا/JJ'), ('', 'عن/IN'), ('', 'التحكم/DTNN'), ('', 'المباشر/DTJJ'), ('', 'من/IN'), ('', 'المستحدم/DTNN'), ('', 'وغالبا/NN'), ('', 'ما/WP'), ('', 'يبدأ/VBP'), ('', 'عمله/NN'), ('', 'كعملية/JJ'), ('', 'خلفية/NN'), ('', 'مع/NN'), ('', 'بداية/NN'), ('', 'تشغيل/NN'), ('', 'النظام/DTNN')]
 
@@ -62,10 +64,11 @@ Thanks for `Peter Norvig http://norvig.com/spell-correct.html`
 .. code-block:: python
 
     >>> from textblob_ar import TextBlob
+    >>> from textblob_ar.correction import TextCorrection
     >>> text = 'الاذدهاز'
-    >>> TextBlob.correct(text)
+    >>> TextCorrection().correct(text)
     {'الاذهان', 'الازدهار', 'الادهان', 'الاندهاش'}
-    >>> TextBlob.correct(text, top=True)
+    >>> TextCorrection().correct(text, top=True)
     'الازدهاز'
 
 **Text Similarity**
@@ -73,7 +76,7 @@ Thanks for `Peter Norvig http://norvig.com/spell-correct.html`
 Based on `gensim <https://radimrehurek.com/gensim>`_ and `Fasttext <https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md>`_  pretrained word2vec model 
 
 The procedure used in calculating similarity
-is calculating the mean feature vector for each sentence.
+is calculating mean feature vector for each sentence.
 Then calculate the cosine distance between those two vectors.
 
 
