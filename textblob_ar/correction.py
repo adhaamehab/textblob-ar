@@ -17,10 +17,10 @@ class TextCorrection:
         N = sum(self.WORDS.values())
         return self.WORDS[word] / N
 
-    def correction(self, word, max=False):
+    def correction(self, word, top=False):
         "Most probable spelling correction for word."
-        if max:
-            return max(self.candidates(word), key=P)
+        if top:
+            return max(self.candidates(word), key=self.P)
         return self.candidates(word)
 
     def candidates(self, word):
