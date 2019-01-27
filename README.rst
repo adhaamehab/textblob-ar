@@ -126,3 +126,8 @@ License
 MIT licensed. See the bundled `LICENSE <https://github.com/sloria/textblob-fr/blob/master/LICENSE>`_ file for more details.
 
 .. _TextBlob: https://textblob.readthedocs.org/
+
+
+.. image:: https://badges.gitter.im/textblob-ar/community.svg
+   :alt: Join the chat at https://gitter.im/textblob-ar/community
+   :target: https://gitter.im/textblob-ar/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
