@@ -68,9 +68,7 @@ class TextBlob(BaseBlob):
                  classifier=None, clean_html=False):
         _tokenizer = tokenizer if tokenizer is not None else WordPunctTokenizer()
         _analyzer = analyzer if analyzer is not None else PatternAnalyzer()
-        _pos_tagger = pos_tagger if pos_tagger is not None else StanfordPartOfSpeechTagger()
-        super().__init__(text=text, tokenizer=_tokenizer, analyzer=_analyzer,
-                         pos_tagger=_pos_tagger, clean_html=clean_html)
+        super().__init__(text=text, tokenizer=_tokenizer, analyzer=_analyzer, clean_html=clean_html)
 
     def stopwords(self):
         '''Return list of arabic stopwords'''
