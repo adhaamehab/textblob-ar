@@ -73,7 +73,7 @@ Thanks for `Peter Norvig http://norvig.com/spell-correct.html`
 
 **Text Similarity**
 
-Based on `gensim <https://radimrehurek.com/gensim>`_ and `Fasttext <https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md>`_  pretrained word2vec model 
+Based on `gensim <https://radimrehurek.com/gensim>`_ and `Fasttext <https://fasttext.cc/docs/en/pretrained-vectors.html>`_  pretrained word2vec model 
 
 The procedure used in calculating similarity
 is calculating mean feature vector for each sentence.
