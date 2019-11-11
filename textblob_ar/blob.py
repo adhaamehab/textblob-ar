@@ -5,8 +5,6 @@ from textblob.compat import unicode
 from textblob.decorators import requires_nltk_corpus
 from textblob_ar.sentiment import PatternAnalyzer
 from textblob_ar.tokenizer import WordPunctTokenizer
-from textblob_ar.pos_tagger import StanfordPartOfSpeechTagger
-
 
 class WordAR(Word):
     """Arabic Word representation and basic ops"""
