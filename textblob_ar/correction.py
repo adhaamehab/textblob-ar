@@ -5,8 +5,8 @@ from collections import Counter
 class TextCorrection:
 
     def __init__(self):
-        wl1 = Counter(self.words(open('data/bbc-arabic-wordlist.csv').read()))
-        wl2 = Counter(self.words(open('data/OSAc-wordlist.csv').read()))
+        wl1 = Counter(self.words(open('data/bbc-arabic-wordlist.csv', , encoding='utf-8').read()))
+        wl2 = Counter(self.words(open('data/OSAc-wordlist.csv',, encoding='utf-8').read()))
         self.WORDS = wl1 + wl2
 
     def words(self, text):
